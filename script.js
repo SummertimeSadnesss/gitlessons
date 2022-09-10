@@ -1,1 +1,3 @@
-document.body.innerText = '<h2>Hello from Javascript</h2>'
+const obj = {};
+
+console.log(!!obj)
