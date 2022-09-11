@@ -1,3 +1,4 @@
-const obj = {};
+const name = 'Андрей';
+const city = 'Астрахань';
 
-console.log(!obj)
+console.log(`Меня зовут ${name}, я живу городе ${city}`);
