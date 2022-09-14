@@ -18,3 +18,5 @@ myFunc2 = (value, multiplier = 1) => {
 }
 
 console.log(myFunc2(6));
+
+//comment
