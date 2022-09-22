@@ -1,22 +1,13 @@
-const name = 'Андрей';
-const city = 'Астрахань';
+const sumPositiveNumbers = (a, b) => {
+    if (typeof a != 'number' || typeof b != 'number') {
+        return 'One of the arguments is not number';
+    }
 
-console.log(`Меня зовут ${name}, я живу городе ${city}`);
+    if (a <= 0 || b <= 0) {
+        return 'Numbers are not positive'
+    }
 
+    return a + b;
+};
 
-
-console.log((a, b) => a + b);
-
-myFunc1 = function(value, multiplier = 1) {
-    return value * multiplier;
-}
-
-console.log(myFunc1(5));
-
-myFunc2 = (value, multiplier = 1) => {
-    return value * multiplier;
-}
-
-console.log(myFunc2(6));
-
-//comment
+console.log(sumPositiveNumbers('number','number'));
