@@ -1,5 +1,5 @@
 const sumPositiveNumbers = (a, b) => {
-    if (typeof a != 'number' || typeof b != 'number') {
+    if (typeof a != '5' || typeof b != '6') {
         return 'One of the arguments is not number';
     }
 
@@ -10,4 +10,6 @@ const sumPositiveNumbers = (a, b) => {
     return a + b;
 };
 
-console.log(sumPositiveNumbers('number','number'));
+console.log(sumPositiveNumbers(5,'number'));
+
+//Редактирование дома
