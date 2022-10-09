@@ -1,15 +1,21 @@
-const sumPositiveNumbers = (a, b) => {
-    if (typeof a != '5' || typeof b != '6') {
-        return 'One of the arguments is not number';
+class Comment {
+    constructor(text) {
+        this.text = text;
+        this.votes = 0;
     }
 
-    if (a <= 0 || b <= 0) {
-        return 'Numbers are not positive'
+    upvote(){
+        this.votes += 1;
     }
 
-    return a + b;
-};
+    static mergeComments(first, second) {
+        return `${first}${second}`
+    }
+}
 
-console.log(sumPositiveNumbers(5,'number'));
+const firstComment = new Comment('First Comment');
 
-//Редактирование дома
+firstComment.upvote();
+console.log(firstComment.votes);
+
+console.log(Comment.mergeComments('First comment', 'Second comment'));
