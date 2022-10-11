@@ -8,3 +8,11 @@
  *
  * 4. Выведите в консоль измененный массив
  */
+
+const myArray = [10, 'text', true, null];
+
+console.log(myArray);
+
+myArray[2] = 5;
+
+console.log(myArray);

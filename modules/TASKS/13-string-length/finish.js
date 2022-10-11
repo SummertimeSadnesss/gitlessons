@@ -4,3 +4,6 @@
  *
  * 2. Виведите в консоль длину этой строки
  */
+const a = 'Semen';
+
+console.log(a.length);

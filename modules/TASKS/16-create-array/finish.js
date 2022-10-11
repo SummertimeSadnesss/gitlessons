@@ -6,3 +6,8 @@
  *
  * 3. Выведите в консоль длину массива
  */
+
+const massive = [10, 'Andrey', null];
+
+console.log(massive[0]);
+console.log(massive.length);

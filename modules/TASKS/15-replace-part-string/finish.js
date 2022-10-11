@@ -6,3 +6,9 @@
  *
  * 3. Выведите значение второй переменной в консоль
  */
+
+
+const str = 'Good Morning';
+const str2 = str.slice(0,5) + 'Evening';
+
+console.log(str2);
