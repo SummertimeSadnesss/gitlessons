@@ -6,11 +6,9 @@
  */
 
 
-const a ='пидор';
 
-const serverTime = setTimeout(function (e) {
 
-}, 5000);
+setTimeout(() => console.log('Ты пидор!'), 5000);
 
 
 
