@@ -8,4 +8,7 @@
 
 const myArray = ['abc', null, 25, true]
 
-const perebor = myArray.forEach( (element) => console.log(element));
+myArray.forEach(function (e) {
+    console.log(e)
+});
+

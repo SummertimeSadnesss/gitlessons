@@ -5,8 +5,7 @@
  * 2. Выведите значение в консоль
  */
 
-const currentDate = new Date()
-
-const currentDateInMs = currentDate.getTime()
-
-console.log(currentDateInMs)
+const currentDate = new Date();
+const msec = currentDate.now()
+console.log(currentDate)
+console.log(msec)

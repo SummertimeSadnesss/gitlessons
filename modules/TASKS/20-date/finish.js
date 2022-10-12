@@ -4,3 +4,8 @@
  *
  * 2. Выведите значение в консоль
  */
+
+
+const time = Date.now()
+
+console.log( time)
