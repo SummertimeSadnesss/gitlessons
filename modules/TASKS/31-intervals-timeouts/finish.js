@@ -12,3 +12,36 @@
  * "Сообщение номер 4"
  * "Сообщение номер 5"
  */
+
+
+
+
+
+
+function myTimer() {
+
+    let count = 1;
+
+    let timerId = setInterval(() => console.log(`Сообщение номер ${count++}`), 2000);
+
+    setTimeout(() => {
+        clearInterval(timerId);
+        console.log(`Сообщение номер ${count++}`);
+    }, 10000);
+
+}
+
+myTimer();
+
+
+
+
+
+
+
+
+
+
+
+
+
