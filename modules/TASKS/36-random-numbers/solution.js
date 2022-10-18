@@ -41,6 +41,8 @@ const addRandomNumberToArray = (arr, min, max) => {
 }
 
 const updatedArray = addRandomNumberToArray(myNumbers, MIN, MAX)
+const updatedArray2 = addRandomNumberToArray(updatedArray , MIN, MAX)
 
 console.log('UPDATED ARRAY', updatedArray)
+console.log('UPDATED ARRAY', updatedArray2)
 console.log('ORIGINAL ARRAY', myNumbers)

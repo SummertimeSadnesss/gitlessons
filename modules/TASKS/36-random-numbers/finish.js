@@ -14,7 +14,36 @@
  *  - для добавления случайного числа в массив с возвратом измененного массива
  */
 
-const MIN = 1000
-const MAX = 9999
+const MIN = 1
+const MAX = 10
 
-const myNumbers = [2355, 7235, 8135, 1762, 2361, 8351]
+const myNumbers = [1, 2, 3, 4, 5, 6]
+
+
+
+
+function generateRumNum(min, max, arr) {
+    let genNum;
+    do {
+       genNum = Math.floor((Math.random() * (max - min) + min));
+    } while (arr.includes(genNum));
+    return genNum;
+}
+
+
+function addElemArray(arr, num) {
+    const newArr = [...arr];
+    newArr.push(num);
+    return newArr;
+}
+
+randomNum = generateRumNum(MIN, MAX, myNumbers)
+console.log(randomNum)
+
+newArray = addElemArray(myNumbers, randomNum)
+console.log(newArray)
+
+addElemArray(myNumbers, newArr)
+console.log(newArray)
+
+
