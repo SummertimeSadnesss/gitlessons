@@ -10,3 +10,12 @@
  */
 
 const myCities = ['London', 'New York', 'Singapore']
+
+const cityInfo = (value, index) => `${value} is at the index ${index} in the myCities array`;
+
+myCities.forEach((value, index) => {
+    let show = cityInfo(value, index);
+    console.log(show)
+});
+
+
