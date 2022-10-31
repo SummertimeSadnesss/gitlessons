@@ -21,4 +21,4 @@ const newArr = postsJSON.map((elem) => {
 })
 console.log(newArr)
 console.log(newArr[1].postId)
-console.log(newArr[length - 1].commentsQuantity)
+console.log(newArr[newArr.length - 1].commentsQuantity)

@@ -6,20 +6,20 @@
  *  - выражение-инструкция (expression statement)
  */
 
-15
+15 // <- выражение инструкиця
 
 const myObject = {
   x: 10,
   y: true,
-}
+} //инструкиция
 
-myObject.z = 'abc'
+myObject.z = 'abc' // <- выражение инструкиця
 
-delete myObject.x
+delete myObject.x // инструкиия
 
-let newVariable
+let newVariable // инструкиця
 
-newVariable = 30 + 5
+newVariable = 30 + 5 // <- выражение инструкиця
 
 console.log(newVariable)
 
