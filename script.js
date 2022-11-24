@@ -1,20 +1,12 @@
 
+let result = '';
 
 
-const numberOfFilms = prompt('Сколько фильмов уже посмотрели?', 'Введите количество фильмов');
+for (let i = 0; i < 3; i++) {
+    for (let i = 0; i <= 1; i++) {
+        result += '*';
+    }
+}
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: {},
-    privat: false
-};
+console.log(result);
 
-const lastFilms = prompt('Один из последних просмотренных фильмов?', 'Введите название фильма');
-const rateFilms = prompt('На сколько цените его? (по 10-ти бальной шкале)', '10');
-
-personalMovieDB.count = +numberOfFilms;
-personalMovieDB.movies[lastFilms] = +rateFilms;
-
-console.log(personalMovieDB);
