@@ -16,6 +16,7 @@ const postsJSON = [
   '{"postId":2351,"commentsQuantity":8}',
 ]
 
+<<<<<<< HEAD
 const arr = [];
 
 postsJSON.forEach((e) => {
@@ -26,3 +27,11 @@ postsJSON.forEach((e) => {
 console.log(arr)
 console.log(arr[1].postId)
 console.log(arr[3].commentsQuantity)
+=======
+const newArr = postsJSON.map((elem) => {
+  return JSON.parse(elem)
+})
+console.log(newArr)
+console.log(newArr[1].postId)
+console.log(newArr[newArr.length - 1].commentsQuantity)
+>>>>>>> 2647d4c26ace12051a4dc1198ea0adc05f1de3fd
