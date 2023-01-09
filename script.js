@@ -1,3 +1,5 @@
+
+
 /* Задание на урок:
 
 1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
@@ -12,15 +14,22 @@
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 
-'use strict';
 
-let numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
-while (numberOfFilms !== false) {
-    alert ('Введите количество просмотренных фильмов!')
-    numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+while (numberOfFilms.length === 0 || numberOfFilms === 'null') {
+    alert("Вы не ввели количество просмотренных фильмов. Пожалуйста введите число!")
+    numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 }
 
+while (numberOfFilms.length > 50) {
+    alert('Слишком длинное название фильма. Пожалуйста введите другой фильм!')
+    numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+}
+
+
+console.log(typeof numberOfFilms)
 
 
 // const personalMovieDB = {
@@ -30,13 +39,15 @@ while (numberOfFilms !== false) {
 //     genres: [],
 //     privat: false
 // };
-//
-// const a = prompt('Один из последних просмотренных фильмов?', ''),
-//     b = prompt('На сколько оцените его?', ''),
-//     c = prompt('Один из последних просмотренных фильмов?', ''),
-//     d = prompt('На сколько оцените его?', '');
-//
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
-//
+// //
+// // const a = prompt('Один из последних просмотренных фильмов?', ''),
+// //     b = prompt('На сколько оцените его?', ''),
+// //     c = prompt('Один из последних просмотренных фильмов?', ''),
+// //     d = prompt('На сколько оцените его?', '');
+// //
+// // personalMovieDB.movies[a] = b;
+// // personalMovieDB.movies[c] = d;
+// //
 // console.log(personalMovieDB.movies);
+// console.log(personalMovieDB);
+
