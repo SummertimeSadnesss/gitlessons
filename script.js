@@ -15,39 +15,65 @@
 4) Потренироваться и переписать цикл еще двумя способами*/
 
 
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+function films () {
+    let numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    const personalMovieDB = {
+        count: numFilms,
+        movies: {},
+        actors: {},
+        genres: [],
+        privat: false
+    };
 
+    while (typeof numFilms === 'string') {
+        alert('Введите число!')
+        numFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
 
-while (numberOfFilms.length === 0 || numberOfFilms === 'null') {
-    alert("Вы не ввели количество просмотренных фильмов. Пожалуйста введите число!")
-    numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+    while (numFilms.length > 50) {
+        alert('Слишком длинное название фильма. Пожалуйста введите другой фильм!')
+        numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+
+    if (personalMovieDB.count < 10) {
+        alert("Просмотрено довольно мало фильмов!");
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
+        alert("Вы классический зритель!");
+    } else if (personalMovieDB.count > 30) {
+        alert("Вы киноман!");
+    } else {
+        alert("Произошла ошибка! Введите число");
+        numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+
+    for (let i = 0;  i < numFilms; i++ ) {
+        let lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+        let rate = +prompt('На сколько оцените его?', '');
+
+        while (lastFilm.length > 50) {
+            alert('Слишком длинное название фильма. Пожалуйста введите другой фильм!');
+            lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+        }
+
+        personalMovieDB.movies[lastFilm] = rate;
+    }
+
+    console.log(personalMovieDB)
+
 }
 
-while (numberOfFilms.length > 50) {
-    alert('Слишком длинное название фильма. Пожалуйста введите другой фильм!')
-    numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
-}
+films()
 
 
-console.log(typeof numberOfFilms)
 
 
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-// //
-// // const a = prompt('Один из последних просмотренных фильмов?', ''),
-// //     b = prompt('На сколько оцените его?', ''),
-// //     c = prompt('Один из последних просмотренных фильмов?', ''),
-// //     d = prompt('На сколько оцените его?', '');
-// //
-// // personalMovieDB.movies[a] = b;
-// // personalMovieDB.movies[c] = d;
-// //
-// console.log(personalMovieDB.movies);
-// console.log(personalMovieDB);
+
+
+
+
+
+
+
+
+
 
