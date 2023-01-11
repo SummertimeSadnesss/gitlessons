@@ -16,7 +16,7 @@
 
 
 function films () {
-    let numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    let numFilmsprompt('Сколько фильмов вы уже посмотрели?', '');
     const personalMovieDB = {
         count: numFilms,
         movies: {},
