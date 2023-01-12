@@ -16,7 +16,7 @@
 
 
 function films () {
-    let numFilmsprompt('Сколько фильмов вы уже посмотрели?', '');
+    let numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     const personalMovieDB = {
         count: numFilms,
         movies: {},
@@ -25,41 +25,49 @@ function films () {
         privat: false
     };
 
-    while (typeof numFilms === 'string') {
-        alert('Введите число!')
-        numFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
-
-    while (numFilms.length > 50) {
-        alert('Слишком длинное название фильма. Пожалуйста введите другой фильм!')
-        numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-    }
-
-    if (personalMovieDB.count < 10) {
-        alert("Просмотрено довольно мало фильмов!");
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30) {
-        alert("Вы классический зритель!");
-    } else if (personalMovieDB.count > 30) {
-        alert("Вы киноман!");
-    } else {
-        alert("Произошла ошибка! Введите число");
+    while (numFilms === 0 || isNaN(numFilms)) {
+        alert('Произошла ошибка! Введите числовое значение!');
         numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     }
 
     for (let i = 0;  i < numFilms; i++ ) {
         let lastFilm = prompt('Один из последних просмотренных фильмов?', '');
-        let rate = +prompt('На сколько оцените его?', '');
+
+        console.log(lastFilm);
+
+        while (lastFilm === 0) {
+            alert('Произошла ошибка! Введите текстовое значение!');
+            lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+        }
 
         while (lastFilm.length > 50) {
-            alert('Слишком длинное название фильма. Пожалуйста введите другой фильм!');
+            alert('Название фильма длинее, чем 50 символов!');
             lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+        }
+
+        let rate = +prompt('На сколько оцените его по 10-ти бальной шкале?', '');
+
+        while (rate === 0 || isNaN(rate)) {
+            alert('Произошла ошибка! Введите числовое значение!');
+            rate = +prompt('На сколько оцените его по 10-ти бальной шкале?', '');
         }
 
         personalMovieDB.movies[lastFilm] = rate;
     }
 
-    console.log(personalMovieDB)
+    if (personalMovieDB.count < 10) {
+        alert('Просмотрено довольно мало фильмов!');
+    }
 
+    if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+        alert('Вы классический зритель!');
+    }
+
+    if (personalMovieDB.count > 30) {
+        alert('Вы киноман!');
+    }
+
+    console.log(personalMovieDB)
 }
 
 films()
