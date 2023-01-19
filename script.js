@@ -92,20 +92,26 @@
 
 
 function myNumProgress(numOne, numTwo) {
-    let prog = 0;
-    for (let i = 1; i <= numTwo; i++) {
-        let count = numOne * i;
-        prog = prog + '---' + count;
-    }
-console.log(prog)
 
+    if (typeof(numTwo) !== 'number' || numTwo <= 0) {
+        return numOne;
+    }
+
+
+    let count = 0;
+    const threeHyphen = '---';
+
+    for (let i = 1; i <= numTwo; i++) {
+        count += numOne * i;
+        count += threeHyphen;
+    }
+    return count.slice(0, -3);
 }
 
-myNumProgress(3, 10);
 
-// const per3 = myNumProgress(3, 10);
+const per3 = myNumProgress(4, 5);
 
-// console.log(per3)
+console.log(per3)
 
 
 
