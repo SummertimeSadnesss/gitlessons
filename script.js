@@ -1,120 +1,137 @@
+'use strict';
 
 
-/* Задание на урок:
+/*
+let numFilms;
+let numGenres;
+const personalMovieDB = {
+    count: numFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false,
+};
 
-1) Автоматизировать вопросы пользователю про фильмы при помощи цикла
+function start() {
+    numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-2) Сделать так, чтобы пользователь не мог оставить ответ в виде пустой строки,
-отменить ответ или ввести название фильма длинее, чем 50 символов. Если это происходит -
-возвращаем пользователя к вопросам опять
-
-3) При помощи условий проверить  personalMovieDB.count, и если он меньше 10 - вывести сообщение
-"Просмотрено довольно мало фильмов", если от 10 до 30 - "Вы классический зритель", а если больше -
-"Вы киноман". А если не подошло ни к одному варианту - "Произошла ошибка"
-
-4) Потренироваться и переписать цикл еще двумя способами*/
-
-// /*
-// function films () {
-//     let numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//     const personalMovieDB = {
-//         count: numFilms,
-//         movies: {},
-//         actors: {},
-//         genres: [],
-//         privat: false
-//     };
-//
-//     while (numFilms === 0 || isNaN(numFilms)) {
-//         alert('Произошла ошибка! Введите числовое значение!');
-//         numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-//     }
-//
-//     for (let i = 0;  i < numFilms; i++ ) {
-//         let lastFilm = prompt('Один из последних просмотренных фильмов?', '');
-//
-//         console.log(lastFilm);
-//
-//         while (lastFilm === 0) {
-//             alert('Произошла ошибка! Введите текстовое значение!');
-//             lastFilm = prompt('Один из последних просмотренных фильмов?', '');
-//         }
-//
-//         while (lastFilm.length > 50) {
-//             alert('Название фильма длинее, чем 50 символов!');
-//             lastFilm = prompt('Один из последних просмотренных фильмов?', '');
-//         }
-//
-//         let rate = +prompt('На сколько оцените его по 10-ти бальной шкале?', '');
-//
-//         while (rate === 0 || isNaN(rate)) {
-//             alert('Произошла ошибка! Введите числовое значение!');
-//             rate = +prompt('На сколько оцените его по 10-ти бальной шкале?', '');
-//         }
-//
-//         personalMovieDB.movies[lastFilm] = rate;
-//     }
-//
-//     if (personalMovieDB.count < 10) {
-//         alert('Просмотрено довольно мало фильмов!');
-//     }
-//
-//     if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
-//         alert('Вы классический зритель!');
-//     }
-//
-//     if (personalMovieDB.count > 30) {
-//         alert('Вы киноман!');
-//     }
-//
-//     console.log(personalMovieDB)
-// }
-//
-// films()*/
-//
-// function myName(name) {
-//     return 'Hello, ' + name;
-// }
-//
-// const per = myName('Андрей');
-// console.log(per);
-//
-// // Создайте функцию, которая принимает в себя 1 аргумент в виде целого числа
-// // и возвращает массив из трех чисел: одно на 1 меньше, сам аргумент, и число на 1 больше.
-//
-// function myArr(num) {
-//     return [num - 1, num, num + 1];
-// }
-//
-// const per2 = myArr(10);
-//
-// console.log(per2)
-
-
-function myNumProgress(numOne, numTwo) {
-
-    if (typeof(numTwo) !== 'number' || numTwo <= 0) {
-        return numOne;
+    while (numFilms === 0 || isNaN(numFilms)) {
+        alert('Произошла ошибка! Введите числовое значение!');
+        numFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
     }
-
-
-    let count = 0;
-    const threeHyphen = '---';
-
-    for (let i = 1; i <= numTwo; i++) {
-        count += numOne * i;
-        count += threeHyphen;
-    }
-    return count.slice(0, -3);
 }
 
+function rememberMyFilms() {
+    for (let i = 0;  i < numFilms; i++ ) {
+        let lastFilm = prompt('Один из последних просмотренных фильмов?', '').trim();
+        while (lastFilm === 0 || lastFilm === '') {
+            alert('Произошла ошибка! Введите текстовое значение!');
+            lastFilm = prompt('Один из последних просмотренных фильмов?', '').trim();
+        }
+        while (lastFilm.length > 50) {
+            alert('Название фильма длинее, чем 50 символов!');
+            lastFilm = prompt('Один из последних просмотренных фильмов?', '');
+        }
 
-const per3 = myNumProgress(4, 5);
+        let rate = +prompt('На сколько оцените его по 10-ти бальной шкале?', '');
+        while (rate === 0 || isNaN(rate)) {
+            alert('Произошла ошибка! Введите числовое значение!');
+            rate = +prompt('На сколько оцените его по 10-ти бальной шкале?', '');
+        }
 
-console.log(per3)
+        personalMovieDB.movies[lastFilm] = rate;
+    }
+}
+
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10) {
+        alert('Просмотрено довольно мало фильмов!');
+    }
+    if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+        alert('Вы классический зритель!');
+    }
+    if (personalMovieDB.count > 30) {
+        alert('Вы киноман!');
+    }
+}
+
+function writeYourGenres() {
+    for (let i = 0; i < 3; i++) {
+        numGenres = prompt(`Ваш любимый жанр под номером ${i + 1}`, '');
+        personalMovieDB.genres[i] = numGenres;
+    }
+}
+
+function showMyDB(hidden) {
+    personalMovieDB.privat = hidden;
+   if (personalMovieDB.privat === false) {
+       console.log (personalMovieDB);
+   }
+}
+
+start();
+rememberMyFilms();
+detectPersonalLevel();
+writeYourGenres();
+showMyDB(false);
+*/
 
 
+// function getTimeFromMinutes(minute) {
+//     if (!Number.isInteger(minute) ||typeof minute === 'string' || minute < 0) {
+//         return ( "Ошибка, проверьте данные");
+//     } else {
+//         let hours = Math.trunc(minute/60);
+//         let minutes = minute % 60;
+//
+//         if (hours === 1) {
+//             console.log (`Это ${hours} час и ${minutes} минут`);
+//         } else if (hours === 0) {
+//             console.log (`Это ${hours} часов и ${minutes} минут`);
+//         } else {
+//             console.log (`Это ${hours} часа и ${minutes} минут`);
+//         }
+//     }
+// }
+//
+// getTimeFromMinutes(-150);
 
+
+/*function findMaxNumber(oneNum, twoNum, threeNum, fourNum) {
+    if (typeof oneNum !== 'number' || typeof twoNum !== 'number' ||
+        typeof threeNum !== 'number' || typeof fourNum !== 'number') {
+        return 0;
+    } else {
+        return Math.max(oneNum, twoNum, threeNum, fourNum);
+    }
+}
+
+const perem = findMaxNumber(1, 12, '30', 0);
+
+console.log(perem);*/
+
+function fib(number) {
+    const arr = [];
+
+    if (typeof number !=='number' || number === 0) {
+        return 'пустой текст'
+    } else if (number === 1) {
+        return 0;
+    } else {
+        for (let i = 0; i < number; i++ ) {
+            if (i < 2) {
+                arr.push(i);
+            } else {
+                arr.push( arr[i - 2] + arr[i - 1] )
+            }
+        }
+    }
+
+    return arr.toString();
+
+}
+
+console.log(fib(7));
 
 
 
