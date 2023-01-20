@@ -112,8 +112,9 @@ console.log(perem);*/
 
 function fib(number) {
     const arr = [];
+    let str = '';
 
-    if (typeof number !=='number' || number === 0) {
+    if (typeof number !=='number' || number === 0 || !Number.isInteger(number)) {
         return 'пустой текст'
     } else if (number === 1) {
         return 0;
@@ -122,16 +123,20 @@ function fib(number) {
             if (i < 2) {
                 arr.push(i);
             } else {
-                arr.push( arr[i - 2] + arr[i - 1] )
+                arr.push(arr[i - 2] + arr[i - 1])
             }
         }
     }
 
-    return arr.toString();
+    arr.forEach((e) => {
+        str = str + `${e} `
+    });
+
+    return str.slice(0, -1);
 
 }
 
-console.log(fib(7));
+console.log(fib(15));
 
 
 
