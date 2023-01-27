@@ -110,7 +110,7 @@ const perem = findMaxNumber(1, 12, '30', 0);
 
 console.log(perem);*/
 
-function fib(number) {
+/*function fib(number) {
     const arr = [];
     let str = '';
 
@@ -136,10 +136,96 @@ function fib(number) {
 
 }
 
-console.log(fib(15));
+console.log(fib(15));*/
+
+const personalPlanPeter = {
+    name: "Peter",
+    age: "29",
+    skills: {
+        languages: ['ru', 'eng'],
+        programmingLangs: {
+            js: '20%',
+            php: '10%',
+            ruby: '30%'
+        },
+        exp: '1 month'
+    },
+    showAgeAndLangs(obj) {
+        const { languages } = obj.skills;
+        let strEng = '';
+
+        for (let value of languages) {
+            strEng += `${value} `;
+        }
+
+        return `Мне ${obj.age} и я владею языками: ${strEng.toUpperCase()}`;
+
+    }
+};
+
+function showExperience(plan) {
+    const { exp } = plan.skills
+    return exp;
+}
+
+/*Язык js изучен на 20% Язык php изучен на 10%"
+Причем функция должна работать вне зависимости от количества языков.
+Если ни один не указан, то возвращается пустая строка.
+P.S. Для переноса строки используется \n в конце строки.*/
+
+/*function showProgrammingLangs(plan) {
+    const { programmingLangs: langs } = plan.skills;
+    let langCount = '';
+
+    if (Object.keys(langs).length === 0){
+        return langCount;
+    } else {
+        for (let key in langs) {
+                langCount += `Язык ${key} изучен на ${langs[key]}` + '\n';
+        }
+        return langCount;
+    }
+}
+
+// showExperience(personalPlanPeter);
+
+console.log(showProgrammingLangs(personalPlanPeter));*/
+
+/*Создайте метод showAgeAndLangs внутри объекта personalPlanPeter.
+При его вызове метод будет принимать в себя объект и возвращать строку в нужном виде.
+
+Пример:
+personalPlanPeter.showAgeAndLangs(personalPlanPeter)
+=> 'Мне 29 и я владею языками: RU ENG'
+
+Заметьте, что возраст и языки подставляются автоматически из объекта, а языки всегда в верхнем регистре (большими буквами). Если данные в объекте поменяются, то и сообщение тоже изменится.*/
+
+// console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter))
 
 
+/*
+const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
 
+function showFamily(arr) {
+    let fam = '';
 
+    if (arr.length === 0) {
+        return 'Семья пуста';
+    } else {
+        arr.forEach((e) => {
+            fam += `${e} `;
+        });
+    }
+    return  `Семья состоит из: ${fam}`;
+}
+console.log(showFamily(family));
 
+function standardizeStrings(arr) {
+    let newArr;
 
+    newArr = arr.map(e => console.log(e.toLowerCase()));
+    return newArr;
+}
+
+standardizeStrings(favoriteCities);*/
