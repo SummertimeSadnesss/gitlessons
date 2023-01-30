@@ -138,35 +138,35 @@ console.log(perem);*/
 
 console.log(fib(15));*/
 
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%',
-            ruby: '30%'
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs(obj) {
-        const { languages } = obj.skills;
-        let strEng = '';
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%',
+//             ruby: '30%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs(obj) {
+//         const { languages } = obj.skills;
+//         let strEng = '';
+//
+//         for (let value of languages) {
+//             strEng += `${value} `;
+//         }
+//
+//         return `Мне ${obj.age} и я владею языками: ${strEng.toUpperCase()}`;
+//
+//     }
+// };
 
-        for (let value of languages) {
-            strEng += `${value} `;
-        }
-
-        return `Мне ${obj.age} и я владею языками: ${strEng.toUpperCase()}`;
-
-    }
-};
-
-function showExperience(plan) {
-    const { exp } = plan.skills
-    return exp;
-}
+// function showExperience(plan) {
+//     const { exp } = plan.skills
+//     return exp;
+// }
 
 /*Язык js изучен на 20% Язык php изучен на 10%"
 Причем функция должна работать вне зависимости от количества языков.
@@ -229,3 +229,32 @@ function standardizeStrings(arr) {
 }
 
 standardizeStrings(favoriteCities);*/
+
+
+// const someString = '';
+//
+// function reverse(str) {
+//     if (typeof str !== 'string') {
+//         return 'Ошибка'
+//     } else {
+//         return str.split('').reverse().join('');
+//     }
+// }
+//
+// console.log(reverse(someString));
+
+const baseCurrencies = ['USD', 'EUR'];
+const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+function availableCurr(arr, missingCurr = '') {
+    let newArr = [];
+
+    arr.forEach(elem => {
+        if (elem !== missingCurr) {
+            newArr.push(elem);
+        }
+    });
+
+}
+
+availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
