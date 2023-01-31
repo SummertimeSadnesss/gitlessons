@@ -231,30 +231,36 @@ function standardizeStrings(arr) {
 standardizeStrings(favoriteCities);*/
 
 
-// const someString = '';
-//
-// function reverse(str) {
-//     if (typeof str !== 'string') {
-//         return 'Ошибка'
-//     } else {
-//         return str.split('').reverse().join('');
-//     }
-// }
-//
-// console.log(reverse(someString));
+const someString = 'This is some strange string';
+
+function reverse(str) {
+    if (typeof str !== 'string') {
+        return 'Ошибка'
+    } else {
+        return str.split('').reverse().join('');
+    }
+}
+
+console.log(reverse(someString));
 
 const baseCurrencies = ['USD', 'EUR'];
 const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
 
 function availableCurr(arr, missingCurr = '') {
-    let newArr = [];
+    let newStr = `Доступные валюты:\n`;
 
-    arr.forEach(elem => {
-        if (elem !== missingCurr) {
-            newArr.push(elem);
-        }
-    });
-
+    if (arr.length === 0) {
+        return 'Нет доступных валют'
+    } else {
+        arr.forEach(elem => {
+            if (elem !== missingCurr) {
+                newStr += `${elem}\n`;
+            }
+        });
+        return newStr.slice(0, -1);
+    }
 }
 
-availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
+const newCall = availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
+
+console.log(newCall)
