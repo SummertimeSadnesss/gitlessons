@@ -229,38 +229,39 @@ function standardizeStrings(arr) {
 }
 
 standardizeStrings(favoriteCities);*/
+//
+//
+// const someString = 'This is some strange string';
+//
+// function reverse(str) {
+//     if (typeof str !== 'string') {
+//         return 'Ошибка'
+//     } else {
+//         return str.split('').reverse().join('');
+//     }
+// }
+//
+// console.log(reverse(someString));
+//
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+//
+// function availableCurr(arr, missingCurr = '') {
+//     let newStr = `Доступные валюты:\n`;
+//
+//     if (arr.length === 0) {
+//         return 'Нет доступных валют'
+//     } else {
+//         arr.forEach(elem => {
+//             if (elem !== missingCurr) {
+//                 newStr += `${elem}\n`;
+//             }
+//         });
+//         return newStr.slice(0, -1);
+//     }
+// }
+//
+// const newCall = availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
+//
+// console.log(newCall)
 
-
-const someString = 'This is some strange string';
-
-function reverse(str) {
-    if (typeof str !== 'string') {
-        return 'Ошибка'
-    } else {
-        return str.split('').reverse().join('');
-    }
-}
-
-console.log(reverse(someString));
-
-const baseCurrencies = ['USD', 'EUR'];
-const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
-
-function availableCurr(arr, missingCurr = '') {
-    let newStr = `Доступные валюты:\n`;
-
-    if (arr.length === 0) {
-        return 'Нет доступных валют'
-    } else {
-        arr.forEach(elem => {
-            if (elem !== missingCurr) {
-                newStr += `${elem}\n`;
-            }
-        });
-        return newStr.slice(0, -1);
-    }
-}
-
-const newCall = availableCurr([...baseCurrencies, ...additionalCurrencies], 'RUB');
-
-console.log(newCall)
