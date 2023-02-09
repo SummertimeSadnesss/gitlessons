@@ -274,5 +274,61 @@ standardizeStrings(favoriteCities);*/
 // console.log(++x)
 
 
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 50000,
 
-console.log('Porno'[2]);
+    squareMagazines: function (magazines) { // - вычисление общей площади всех магазинов, которая вычисляется как длина магазина, умноженная на его ширину;
+        let count = 0;
+        magazines.forEach(() => {
+            for (let elem in obj) {
+              count += 0
+            }
+        });
+        console.log(count)
+    },
+};
+
+shoppingMallData.squareMagazines(shoppingMallData.shops);
+
+
+
+
+
+
+
+
+
+
+// - вычисление общего объема торгового центра, так как цена отопления указана в кубических метрах;
+
+
+
+// - определение того, хватает ли бюджета на оплату такого объема;
+
+
+function isBudgetEnough(data) {
+
+}
+
+
+
