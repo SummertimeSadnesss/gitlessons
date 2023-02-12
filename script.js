@@ -297,38 +297,44 @@ const shoppingMallData = {
     moneyPer1m3: 30,
     budget: 50000,
 
-    squareMagazines: function (magazines) { // - вычисление общей площади всех магазинов, которая вычисляется как длина магазина, умноженная на его ширину;
-        let count = 0;
-        magazines.forEach(() => {
-            for (let elem in obj) {
-              count += 0
-            }
+    // - вычисление общей площади всех магазинов, которая вычисляется
+    // как длина магазина, умноженная на его ширину;
+    squareMagazines: function () {
+        let multiSq = [];
+
+        const mapping = shoppingMallData.shops.map(obj => {
+            multiSq = obj.width * obj.length;
+            return multiSq;
         });
-        console.log(count)
+
+        return mapping.reduce((accum, currentValue) => {
+            return accum + currentValue;
+        });
+
     },
-};
 
-shoppingMallData.squareMagazines(shoppingMallData.shops);
+    // - вычисление общего объема торгового центра, так как цена отопления указана в кубических метрах;
 
+    allSqm3: function (funcSq) {
+        const square = funcSq();
+        return square * this.height * this.moneyPer1m3;
+    },
+}
 
-
-
-
-
-
-
-
-
-// - вычисление общего объема торгового центра, так как цена отопления указана в кубических метрах;
-
+const slavefunc = shoppingMallData.allSqm3(shoppingMallData.squareMagazines);
+console.log(slavefunc);
 
 
 // - определение того, хватает ли бюджета на оплату такого объема;
-
-
 function isBudgetEnough(data) {
-
+    if (data > shoppingMallData.budget) {
+        return 'Бюджета недостаточно'
+    } else {
+        return 'Бюджета достаточно'
+    }
 }
+
+console.log(isBudgetEnough(slavefunc));
 
 
 
