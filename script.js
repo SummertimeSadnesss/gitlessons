@@ -274,67 +274,59 @@ standardizeStrings(favoriteCities);*/
 // console.log(++x)
 
 
-const shoppingMallData = {
-    shops: [
-        {
-            width: 10,
-            length: 5
-        },
-        {
-            width: 15,
-            length: 7
-        },
-        {
-            width: 20,
-            length: 5
-        },
-        {
-            width: 8,
-            length: 10
-        }
-    ],
-    height: 5,
-    moneyPer1m3: 30,
-    budget: 50000,
+// const shoppingMallData = {
+//     shops: [
+//         {
+//             width: 10,
+//             length: 5
+//         },
+//         {
+//             width: 15,
+//             length: 7
+//         },
+//         {
+//             width: 20,
+//             length: 5
+//         },
+//         {
+//             width: 8,
+//             length: 10
+//         }
+//     ],
+//     height: 5,
+//     moneyPer1m3: 30,
+//     budget: 50000,
+// };
+//
+// function isBudgetEnough(data) {
+//     let square = [];
+//
+//     const mapping = data.shops.map(obj => {
+//         square = obj.width * obj.length;
+//         return square;
+//     });
+//
+//     square = mapping.reduce((accum, currentValue) => {
+//         return accum + currentValue;
+//     });
+//
+//     const total = square * data.height * data.moneyPer1m3;
+//
+//     if ((data.budget - total) >= 0) {
+//         return 'Бюджета достаточно';
+//     } else {
+//         return 'Бюджета недостаточно';
+//     }
+// }
+//
+// const budgetEnough = isBudgetEnough(shoppingMallData);
+// console.log(budgetEnough)
 
-    // - вычисление общей площади всех магазинов, которая вычисляется
-    // как длина магазина, умноженная на его ширину;
-    squareMagazines: function () {
-        let multiSq = [];
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
-        const mapping = shoppingMallData.shops.map(obj => {
-            multiSq = obj.width * obj.length;
-            return multiSq;
-        });
-
-        return mapping.reduce((accum, currentValue) => {
-            return accum + currentValue;
-        });
-
-    },
-
-    // - вычисление общего объема торгового центра, так как цена отопления указана в кубических метрах;
-
-    allSqm3: function (funcSq) {
-        const square = funcSq();
-        return square * this.height * this.moneyPer1m3;
-    },
+function sortStudentsByGroups(arr) {
+    return arr.sort()
 }
 
-const slavefunc = shoppingMallData.allSqm3(shoppingMallData.squareMagazines);
-console.log(slavefunc);
-
-
-// - определение того, хватает ли бюджета на оплату такого объема;
-function isBudgetEnough(data) {
-    if (data > shoppingMallData.budget) {
-        return 'Бюджета недостаточно'
-    } else {
-        return 'Бюджета достаточно'
-    }
-}
-
-console.log(isBudgetEnough(slavefunc));
-
-
-
+const studentsByGroups = sortStudentsByGroups(students);
+console.log(studentsByGroups)
